@@ -1,6 +1,8 @@
 # CodeIsPresident2025
 Samling av uppgiftsbeskrivningar
 
+Döp dina repon till CiP-xx-valfritt där xx motsvarar uppgiftens nummer.
+
 
 # Uppgift 1 – Räkna Fizz, Buzz
 ## Del ett
