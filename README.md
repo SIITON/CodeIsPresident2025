@@ -1,8 +1,8 @@
 # CodeIsPresident2025
 Samling av uppgiftsbeskrivningar
 
-Döp dina repon till CiP-xx-valfritt där xx motsvarar uppgiftens nummer.
-ex. CiP-01-FizzlyBizz
+Döp dina repon till `CiP-xx-valfritt` där xx motsvarar uppgiftens nummer.
+ex. `CiP-01-FizzlyBizz`
 
 
 # Uppgift 1 – Räkna Fizz, Buzz
