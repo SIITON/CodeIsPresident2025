@@ -13,18 +13,17 @@ En spelturnering ska arrangeras med `n` deltagare (jämnt antal).
 I varje runda paras deltagarna ihop två och två, och ingen får möta samma motståndare två gånger.  
 Efter totalt `n−1` rundor har alla hunnit möta alla andra exakt en gång.
 
-Din uppgift är att, givet antalet deltagare `n` och en specifik runda `d`, skriva ut vilka par som ska spela i just den rundan.  
+Du får en lista med deltagare (se nedan). Din uppgift är att, givet antalet deltagare `n` och en specifik runda `d`, skriva ut vilka par som ska spela i just den rundan.  
 
 ### Specifikation
-- **Indata:** två heltal  
-  - `n` (2 ≤ n ≤ 100 000, jämnt)  
-  - `d` (1 ≤ d ≤ n−1)  
-- **Deltagare:** numreras `0..n−1`.  
-- **Utdata:** `n/2` rader där varje rad innehåller två deltagare `a b` (med `a < b`) som möts i runda `d`.  
+- **Indata:**  
+  - En lista med `n` deltagare (varje deltagare har `id` och `name`).  
+  - Ett heltal `d` (1 ≤ d ≤ n−1).  
+- **Utdata:** `n/2` rader där varje rad innehåller två namn `nameA vs nameB`.  
 - Ordningen mellan raderna är valfri.  
 - Paren ska konstrueras enligt round-robin-metoden (även kallad polygonmetoden), så att inga par upprepas mellan olika rundor.  
 
-### Exempel
+### Exempel (med sample-data nedan)
 
 ```
 Indata:
@@ -32,9 +31,9 @@ n = 6
 d = 2
 
 Möjlig utdata:
-0 2
-1 5
-3 4
+Alice vs Charlie
+Bob vs Fiona
+Diana vs Ethan
 ```
 
 ---
@@ -56,7 +55,7 @@ Programmet ska kunna besvara tre typer av frågor:
    Beräkna hur många unika par som ännu inte hunnit mötas efter att `D` rundor har genomförts.  
 
 3. **Direktfråga**  
-   Givet en specifik spelare `i` och en runda `d`, räkna ut direkt vem hen möter i just den rundan – utan att bygga hela schemat.  
+   Givet en specifik spelare `i` (index i listan) och en runda `d`, räkna ut direkt vem hen möter i just den rundan – utan att bygga hela schemat.  
 
 ### Indata
 - `n` – antalet deltagare (2 ≤ n ≤ 10^18, och n måste vara jämnt).  
@@ -69,7 +68,7 @@ Alla värden behöver inte användas i varje fråga – t.ex. används bara `n` 
 ### Utdata
 - Ett heltal: max antal rundor.  
 - Ett heltal: antal återstående par efter `D` rundor.  
-- Två heltal `a b`: den spelare `i` möter i runda `d` (med `a < b`).  
+- Två namn: de två spelarna som möts i runda `d`.  
 
 ### Exempel
 
@@ -100,14 +99,12 @@ i = 4
 d = 2
 
 Utdata:
-4 7
+Ethan vs Julia
 ```
 
 ---
 
 ## Deltagarlista (sample)
-
-För att göra uppgiften mer konkret får ni en färdig lista med 20 spelare:  
 
 ```json
 [
@@ -134,11 +131,4 @@ För att göra uppgiften mer konkret får ni en färdig lista med 20 spelare:
 ]
 ```
 
-Ni kan mappa index `0..19` till dessa namn för att skriva ut parlistor på formen:  
-
-```
-Alice möter Charlie
-Bob möter Diana
-...
-```
-
+Ni kan mappa index `0..19` till dessa namn för att skriva ut parlistor.
