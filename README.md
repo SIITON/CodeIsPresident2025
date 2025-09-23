@@ -2,10 +2,13 @@
 Samling av uppgiftsbeskrivningar
 
 Döp dina repon till `CiP-xx-valfritt` där xx motsvarar uppgiftens nummer.    
-ex. `CiP-01-FizzlyBizz`
+ex. `CiP-01-FizzlyBizz`   
+## Tidigare uppgifter
+ 1. [CiP-01-FizzlyBizz](CiP-01-FizzlyBizz.md)
 
+---
 
-# Uppgift 2 – Spelturnering
+# Uppgift 2 – Spelturnering (CiP-02-eWorldCup)
 
 ## Del ett
 
