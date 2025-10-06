@@ -1,0 +1,62 @@
+[
+    {
+        "Id": 1,
+        "Name": "Goku",
+        "ImageUrl": "/images/goku.png"
+    },
+    {
+        "Id": 2,
+        "Name": "Majin Buu",
+        "ImageUrl": "/images/majinbuu.png"
+    },
+    {
+        "Id": 3,
+        "Name": "Frieza",
+        "ImageUrl": "/images/frieza.png"
+    },
+    {
+        "Id": 4,
+        "Name": "Gohan",
+        "ImageUrl": "/images/gohan.png"
+    },
+    {
+        "Id": 5,
+        "Name": "Trunks",
+        "ImageUrl": "/images/trunks.png"
+    },
+    {
+        "Id": 6,
+        "Name": "Vegeta",
+        "ImageUrl": "/images/vegeta.png"
+    },
+    {
+        "Id": 7,
+        "Name": "Ulqiorra",
+        "ImageUrl": "/images/ulqiorra.png"
+    },
+    {
+        "Id": 8,
+        "Name": "Aizen",
+        "ImageUrl": "/images/aizen.png"
+    },
+    {
+        "Id": 9,
+        "Name": "Kvothe",
+        "ImageUrl": "/images/kvothe.png"
+    },
+    {
+        "Id": 10,
+        "Name": "Belgarion",
+        "ImageUrl": "/images/belgarion.png"
+    },
+    {
+        "Id": 11,
+        "Name": "Orochimaru",
+        "ImageUrl": "/images/orochimaru.png"
+    },
+    {
+        "Id": 12,
+        "Name": "Madara Uchiha",
+        "ImageUrl": "/images/madara.png"
+    }
+]

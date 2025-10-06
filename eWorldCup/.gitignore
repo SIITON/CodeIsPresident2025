@@ -1,0 +1,55 @@
+# Build Folders
+bin/
+obj/
+
+# User-Specific Files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Temporary Files
+*.tmp
+*.temp
+*.cache
+*.pdb
+*.mdb
+
+# Visual Studio Specific
+.vs/
+.vscode/
+
+# NuGet Packages
+*.nupkg
+packages/
+
+# Rider IDE Specific
+.idea/
+*.sln.iml
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+
+# Dependency Directories
+node_modules/
+
+# Publish Outputs
+publish/
+out/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Azure Pipelines
+*.coverage
+*.coveragexml
+*.testResults
+
+# Other
+*.lock.json
+project.lock.json
