@@ -4,17 +4,11 @@ using eWorldCup.Domain.Entities;
 
 namespace eWorldCup.Infrastructure.Repositories;
 
-public class FileParticipantRepository : IParticipantRepository
+public class FileParticipantRepository(IWebHostEnvironment env, ILogger<FileParticipantRepository> logger) : IParticipantRepository
 {
-    private readonly IWebHostEnvironment _env;
-    private readonly ILogger<FileParticipantRepository> _logger;
+    private readonly IWebHostEnvironment _env = env;
+    private readonly ILogger<FileParticipantRepository> _logger = logger;
     private readonly string _relativePath = Path.Combine("eWorldCup", "Presentation", "Participants.json");
-
-    public FileParticipantRepository(IWebHostEnvironment env, ILogger<FileParticipantRepository> logger)
-    {
-        _env = env;
-        _logger = logger;
-    }
 
     public async Task<IReadOnlyList<Participant>> GetAllAsync()
     {
@@ -24,7 +18,7 @@ public class FileParticipantRepository : IParticipantRepository
             if (!File.Exists(fullPath))
             {
                 _logger.LogWarning("Participants file not found at {Path}", fullPath);
-                return Array.Empty<Participant>();
+                return [];
             }
             await using var stream = File.OpenRead(fullPath);
             var participants = await JsonSerializer.DeserializeAsync<List<Participant>>(stream, new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new List<Participant>();
@@ -33,7 +27,7 @@ public class FileParticipantRepository : IParticipantRepository
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error reading participants file");
-            return Array.Empty<Participant>();
+            return [];
         }
     }
 }

@@ -3,14 +3,9 @@ using eWorldCup.Domain.Entities;
 
 namespace eWorldCup.Application;
 
-public class RoundRobinPairGenerator : IRoundPairGenerator
+public class RoundRobinPairGenerator(ILogger<RoundRobinPairGenerator> logger) : IRoundPairGenerator
 {
-    private readonly ILogger<RoundRobinPairGenerator> _logger;
-
-    public RoundRobinPairGenerator(ILogger<RoundRobinPairGenerator> logger)
-    {
-        _logger = logger;
-    }
+    private readonly ILogger<RoundRobinPairGenerator> _logger = logger;
 
     public List<MatchPair> GeneratePairs(IReadOnlyList<Participant> participants, int round)
     {

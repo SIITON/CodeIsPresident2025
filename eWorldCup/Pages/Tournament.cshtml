@@ -91,13 +91,7 @@
 
     <hr />
 
-    <div class="section" id="section-quicktest">
-        <h2>Quick Test All Features</h2>
-        <div class="row">
-            <button class="b5" id="btnTestAll">Run All Tests</button>
-        </div>
-        <pre id="testLog" style="display:none;"></pre>
-    </div>
+    
 </div>
 <script>
 (function(){
@@ -218,29 +212,7 @@
         } catch(err){ showMessage(err.message, false); }
     });
 
-    // Quick Test All
-    el('btnTestAll').addEventListener('click', async ()=>{
-        const logEl = el('testLog');
-        logEl.style.display='block';
-        logEl.textContent = 'Running tests...\n';
-        function log(t){ logEl.textContent += t + '\n'; }
-        try {
-            if (participants.length === 0) await loadParticipants();
-            const max = await apiGet(`${apiBase}/max-rounds?participantCount=${participants.length}`);
-            log(`MaxRounds OK -> ${max.maxNumRounds}`);
-            const rem = await apiGet(`${apiBase}/remaining-pairs?participantCount=${participants.length}&roundsPlayed=3`);
-            log(`RemainingPairs OK -> ${rem.remainingPairs}`);
-            const dm = await apiPost(`${apiBase}/direct-match`, { participantCount: participants.length, playerIndex:0, round:1, participants });
-            log(`DirectMatch OK -> ${dm.player} vs ${dm.opponent}`);
-            const prsResult = await apiPost(`${apiBase}/round`, { round:1, participants });
-            const pairs = unwrapPairs(prsResult);
-            log(`Pairs OK -> ${pairs.length} pairs`);
-            showMessage('All tests completed successfully.');
-        } catch(err){
-            log('Error: ' + err.message);
-            showMessage('One or more tests failed: ' + err.message, false);
-        }
-    });
+   
 
     // Initial load
     loadParticipants();

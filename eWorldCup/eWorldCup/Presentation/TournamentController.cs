@@ -8,24 +8,16 @@ namespace eWorldCup.Presentation
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TournamentController : ControllerBase
+    public class TournamentController(
+        IRoundPairGenerator pairGenerator,
+        IRoundMetricsService metrics,
+        IDirectMatchResolver directMatch,
+        IParticipantRepository participantsRepo) : ControllerBase
     {
-        private readonly IRoundPairGenerator _pairGenerator;
-        private readonly IRoundMetricsService _metrics;
-        private readonly IDirectMatchResolver _directMatch;
-        private readonly IParticipantRepository _participantsRepo;
-
-        public TournamentController(
-            IRoundPairGenerator pairGenerator,
-            IRoundMetricsService metrics,
-            IDirectMatchResolver directMatch,
-            IParticipantRepository participantsRepo)
-        {
-            _pairGenerator = pairGenerator;
-            _metrics = metrics;
-            _directMatch = directMatch;
-            _participantsRepo = participantsRepo;
-        }
+        private readonly IRoundPairGenerator _pairGenerator = pairGenerator;
+        private readonly IRoundMetricsService _metrics = metrics;
+        private readonly IDirectMatchResolver _directMatch = directMatch;
+        private readonly IParticipantRepository _participantsRepo = participantsRepo;
 
         [HttpGet("participants")]
         public async Task<ActionResult<IEnumerable<Participant>>> GetParticipants()

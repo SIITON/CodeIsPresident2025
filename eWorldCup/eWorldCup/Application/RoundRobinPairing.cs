@@ -2,7 +2,7 @@ namespace eWorldCup.Application;
 
 internal static class RoundRobinPairing
 {
-    // Returns the rotated order of indices for a given round (1-based round)
+
     public static IReadOnlyList<int> GetRotatedOrder(int participantCount, int round)
     {
         Validate(participantCount, round);
@@ -10,7 +10,7 @@ internal static class RoundRobinPairing
         var indices = Enumerable.Range(0, participantCount).ToList();
         for (int r = 0; r < round - 1; r++)
         {
-            // same rotation logic used previously
+
             var last = indices[^1];
             indices.RemoveAt(indices.Count - 1);
             indices.Insert(1, last);
@@ -18,7 +18,7 @@ internal static class RoundRobinPairing
         return indices;
     }
 
-    // Returns list of pairing tuples (A,B) for round
+
     public static List<(int A, int B)> GetRoundPairs(int participantCount, int round)
     {
         var rotated = GetRotatedOrder(participantCount, round);
