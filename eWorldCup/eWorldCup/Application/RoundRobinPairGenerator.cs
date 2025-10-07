@@ -10,31 +10,31 @@ public class RoundRobinPairGenerator(ILogger<RoundRobinPairGenerator> logger) : 
     public List<MatchPair> GeneratePairs(IReadOnlyList<Participant> participants, int round)
     {
         int n = participants.Count;
-        if (n % 2 != 0)
+        try
         {
-            _logger.LogError("Number of participants must be even. Provided count: {Count}", n);
-            throw new ArgumentException("Number of participants must be even.");
+            var order = RoundRobinPairing.GetRotatedOrder(n, round);
+            _logger.LogInformation("Participants order for round {Round}: {Order}",
+                round, string.Join(", ", order.Select(i => participants[i].Name)));
+
+            var rawPairs = RoundRobinPairing.GetRoundPairs(n, round);
+            var result = MapPairs(rawPairs, participants);
+
+            _logger.LogInformation("Generated pairs for round {Round}: {Pairs}",
+                round, string.Join(", ", result.Select(p => $"{p.ParticipantA} vs {p.ParticipantB}")));
+
+            return result;
         }
-        if (round < 1 || round > n - 1)
+        catch (Exception ex)
         {
-            _logger.LogError("Invalid round number: {Round}. Must be between 1 and {MaxRound}", round, n - 1);
-            throw new ArgumentOutOfRangeException(nameof(round), "Round must be between 1 and n-1.");
+            _logger.LogError(ex, "Error generating pairs for round {Round}", round);
+            throw;
         }
+    }
 
-        var order = RoundRobinPairing.GetRotatedOrder(n, round);
-        _logger.LogInformation("Participants order for round {Round}: {Order}",
-            round, string.Join(", ", order.Select(i => participants[i].Name)));
-
-        var rawPairs = RoundRobinPairing.GetRoundPairs(n, round);
-        var result = new List<MatchPair>(rawPairs.Count);
-        foreach (var (a, b) in rawPairs)
-        {
-            result.Add(new MatchPair(participants[a].Name, participants[b].Name));
-        }
-
-        _logger.LogInformation("Generated pairs for round {Round}: {Pairs}",
-            round, string.Join(", ", result.Select(p => $"{p.ParticipantA} vs {p.ParticipantB}")));
-
-        return result;
+    private static List<MatchPair> MapPairs(List<(int A, int B)> rawPairs, IReadOnlyList<Participant> participants)
+    {
+        return rawPairs
+            .Select(pair => new MatchPair(participants[pair.A].Name, participants[pair.B].Name))
+            .ToList();
     }
 }

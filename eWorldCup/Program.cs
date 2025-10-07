@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 
-// New service registrations
+
 builder.Services.AddScoped<IRoundPairGenerator, RoundRobinPairGenerator>();
 builder.Services.AddScoped<IRoundMetricsService, RoundMetricsService>();
 builder.Services.AddScoped<IDirectMatchResolver, DirectMatchResolver>();

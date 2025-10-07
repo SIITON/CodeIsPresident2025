@@ -45,7 +45,7 @@ internal static class RoundRobinPairing
             if (b == playerIndex) return (b, a);
         }
 
-        throw new InvalidOperationException("Player not found in computed pairs.");
+        throw new InvalidOperationException("Player not found in list of pairs.");
     }
 
     private static void Validate(int participantCount, int round)
