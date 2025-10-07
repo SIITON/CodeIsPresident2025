@@ -1,17 +1,3 @@
-# CodeIsPresident2025
-
-Samling av uppgiftsbeskrivningar
-
-Döp dina repon till `CiP-xx-valfritt` där xx motsvarar uppgiftens nummer.  
-ex. `CiP-01-FizzlyBizz`
-
-## Tidigare uppgifter
-
-1.  [CiP-01-FizzlyBizz](CiP-01-FizzlyBizz.md)
-2.  [CiP-02-eWorldCup](CiP-02-eWorldCup.md)
-
----
-
 # Uppgift 3 – eWorldCup Manager (CiP-03-eWorldCup Manager)
 
 Bygg en komplett lösning för turneringen från **CiP-02** som består av:
