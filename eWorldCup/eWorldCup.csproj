@@ -10,4 +10,19 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="eWorldCup\Application\Interfaces\" />
+    <Folder Include="eWorldCup\Application\Repositories\" />
+    <Folder Include="eWorldCup\Application\Responses\" />
+    <Folder Include="eWorldCup\Application\Services\" />
+    <Folder Include="eWorldCup\Domain\Entities\" />
+    <Folder Include="eWorldCup\Infrastructure\Repositories\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
+
 </Project>
