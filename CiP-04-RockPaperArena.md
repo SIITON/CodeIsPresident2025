@@ -1,18 +1,3 @@
-# CodeIsPresident2025
-
-Samling av uppgiftsbeskrivningar
-
-Döp dina repon till `CiP-xx-valfritt` där xx motsvarar uppgiftens nummer.  
-ex. `CiP-01-FizzlyBizz`
-
-## Tidigare uppgifter
-
-1.  [CiP-01-FizzlyBizz](CiP-01-FizzlyBizz.md)
-2.  [CiP-02-eWorldCup](CiP-02-eWorldCup.md)
-3.  [CiP-03-eWorldCup-Manager](CiP-03-eWorldCup-Manager.md)
-
----
-
 # Uppgift 4 – Rock Paper Arena (CiP-04-RockPaperArena)
 
 I den här uppgiften bygger du vidare på föregående uppgift **CiP-03-eWorldCup**.  
