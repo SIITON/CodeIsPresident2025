@@ -1,0 +1,95 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Production builds
+dist/
+dist-ssr/
+build/
+out/
+
+# Testing
+coverage/
+*.coverage
+.nyc_output
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.local
+
+# Cache and temporary files
+.cache/
+.temp/
+.tmp/
+*.tmp
+*.temp
+.eslintcache
+.stylelintcache
+.parcel-cache/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Package manager lock files (optional - uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Debug files
+*.map
+*.tsbuildinfo
+
+# Storybook
+storybook-static/
+
+# Firebase
+.firebase/
+.firebaserc
+
+# Vercel
+.vercel
+
+# Next.js (if applicable)
+.next/
+
+# Misc
+*.seed
+*.pid
+*.pid.lock
