@@ -34,8 +34,17 @@ Systemet ska visa **aktuellt väder (nuläge)** och inte hantera prognoser eller
 
 ## Datakällor och resurser
 
-- **METAR API (AviationWeather / NOAA)**  
-  https://aviationweather.gov/api/data/metar?ids=<ICAO>
+- **METAR API (CheckWX)**  
+  Skapa ett konto på https://checkwxapi.com/  
+  API-endpoint: `https://api.checkwx.com/metar/<ICAO>`  
+  Exempel med curl:
+
+  ```bash
+  curl 'https://api.checkwx.com/metar/essa' -H 'X-API-Key: xxxxx'
+  ```
+
+  Ersätt `xxxxx` med din API-nyckel från CheckWX.
+
 
 - **Väderikoner (Weather Icons)**  
   https://erikflowers.github.io/weather-icons/
