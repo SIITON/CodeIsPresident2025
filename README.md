@@ -16,7 +16,7 @@ ex. `CiP-01-FizzlyBizz`
 
 # Uppgift 5 - Flightfronts METAR (CiP-05–FlightfrontMETAR)
 
-## Kundscenario – Foreflightsflyggklubb
+## Kundscenario – Flightfrontflyg gklubb
 
 Flightfronts flygklubb vill ha ett enkelt webbaserat verktyg som gör METAR lättare att förstå för både elevpiloter och instruktörer.
 
