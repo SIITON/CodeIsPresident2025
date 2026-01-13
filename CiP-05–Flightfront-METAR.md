@@ -1,22 +1,6 @@
-# CodeIsPresident2025
+# Uppgift 5 - Flightfronts METAR (CiP-05–Flightfront-METAR)
 
-Samling av uppgiftsbeskrivningar
-
-Döp dina repon till `CiP-xx-valfritt` där xx motsvarar uppgiftens nummer.  
-ex. `CiP-01-FizzlyBizz`
-
-## Tidigare uppgifter
-
-1.  [CiP-01-FizzlyBizz](CiP-01-FizzlyBizz.md)
-2.  [CiP-02-eWorldCup](CiP-02-eWorldCup.md)
-3.  [CiP-03-eWorldCup-Manager](CiP-03-eWorldCup-Manager.md)
-4.  [CiP-04-RockPaperArena](CiP-04-RockPaperArena.md)
-
----
-
-# Uppgift 5 - Flightfronts METAR (CiP-05–FlightfrontMETAR)
-
-## Kundscenario – Foreflightsflyggklubb
+## Kundscenario – Flightfronts flygklubb
 
 Flightfronts flygklubb vill ha ett enkelt webbaserat verktyg som gör METAR lättare att förstå för både elevpiloter och instruktörer.
 
@@ -34,8 +18,16 @@ Systemet ska visa **aktuellt väder (nuläge)** och inte hantera prognoser eller
 
 ## Datakällor och resurser
 
-- **METAR API (AviationWeather / NOAA)**  
-  https://aviationweather.gov/api/data/metar?ids=<ICAO>
+- **METAR API (CheckWX)**  
+  Skapa ett konto på https://checkwxapi.com/  
+  API-endpoint: `https://api.checkwx.com/metar/<ICAO>`  
+  Exempel med curl:
+
+  ```bash
+  curl 'https://api.checkwx.com/metar/essa' -H 'X-API-Key: xxxxx'
+  ```
+
+  Ersätt `xxxxx` med din API-nyckel från CheckWX.
 
 - **Väderikoner (Weather Icons)**  
   https://erikflowers.github.io/weather-icons/
