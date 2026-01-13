@@ -60,6 +60,7 @@ Fokus ligger på **struktur, rimliga förenklingar och konsekvent tolkning**.
 
 <details>
 <summary><strong>Hur METAR tolkas (klicka för att visa/dölja)</strong></summary>
+Länk för att läsa mer: https://metar-taf.com/explanation
 
 ### Parser-checklista
 
