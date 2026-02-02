@@ -11,182 +11,94 @@ ex. `CiP-01-FizzlyBizz`
 2.  [CiP-02-eWorldCup](CiP-02-eWorldCup.md)
 3.  [CiP-03-eWorldCup-Manager](CiP-03-eWorldCup-Manager.md)
 4.  [CiP-04-RockPaperArena](CiP-04-RockPaperArena.md)
+5.  [CiP-05-FlightfrontMETAR](CiP-05–FlightfrontMETAR.md)
 
 ---
 
-# Uppgift 5 - Flightfronts METAR (CiP-05–FlightfrontMETAR)
+# Projekt - DashyBord (CiP-25-DashyBord)
 
-## Kundscenario – Flightfronts flygklubb
+Ni har i uppgift att skapa en applikation som ska ta hallspegeln till framtiden. Hallspegeln visar relevant och personlig information en individ kan tänkas behöva ta in när de ska lämna hemmet.
 
-Flightfronts flygklubb vill ha ett enkelt webbaserat verktyg som gör METAR lättare att förstå för både elevpiloter och instruktörer.
+Men ni har ett val. Antingen går ni spåret att utveckla applikationen för individen, eller så bygger ni en version av applikationen mer lämpad åt hotell, specifikt flygplanshotell.
+| Spår                                   | Målgrupp                | Fokus                                       |
+| -------------------------------------- | ----------------------- | ------------------------------------------- |
+| **B2C – Personlig DashyBord**          | Privatpersoner          | Personlig, social och anpassningsbar        |
+| **B2B – Hotellversion (Pilot-hotell)** | Hotell för flygpersonal | Central administration och destinationsinfo |
 
-Användaren ska kunna:
+## Spår B2C - Personlig DashyBord
+"Tänk dig en smart och personlig dashboard med relevant information när du beger dig ut."
+Sa Dasha Ybor till Bor Daniel under en kafferast, och som ledde de till att starta bolag. Idag är ni anställda för att förverkliga den idén. 
+Efterfrågan har vuxit och förväntningarna på systemet är skyhöga. 
+Det sägs att alla kommer ha en DashyBord i hallen. Det ryktas redan om samarbeten med bl.a. IKEA, Balettakademien och The Mirror.
+Själva grunden till DashyBord är personligheten, anpassningen och det sociala. Användare ska kunna logga in och spara sin egna konfiguration av vad som visas.
 
-- ange en ICAO-kod **eller**
-- klistra in en METAR-sträng
+En personlig dashboard som innehåller 
+- Klocka
+- Lokaltrafik (t.ex. SL)
+  - Avgångstider
+  - Förseningar
+  - Hållplats eller station som användaren väljer/bor på
+- Lokalväder
+  - Temperatur,
+  - Vind
+  - Väderikoner 
+  - Prognos
+- Interaktion med andra användare
+  - Lägg till som vän
+  - Skicka puff/hälsning/meddelande till vänner 
+- Valfri interaktiv extern datakälla
+  - Aktiebevakning
+  - RSS Feed
+  - Guldpriser
+  - Statussida
+  - Google calender
+  - Sportresultat
+  - Turneringsstatistik
+  - Spel
 
-och få vädret presenterat i ett tydligt UI.  
-Den **råa METAR-strängen ska alltid visas** för den som vill verifiera tolkningen.
+## Spår B2B - Hotellversion Pilow
+Hotellkedjan **Pilows** riktar sig till trötta piloter världen över och ska starta upp ett nytt koncept precis intill en flygplats. Det är helt upp till er vilken flygplats hotellet ska etablera sig på. 
+Varje rum ska bestyckas med en smart spegel. Det är er uppgift att utveckla systemet för dessa speglar.
 
-Systemet ska visa **aktuellt väder (nuläge)** och inte hantera prognoser eller flygplanering.
+I hotellversionen krävs ingen personlig inloggning och vädret bestäms av hotellets position. Däremot kräver personalen en central kontrollstation som kan hantera gästernas speglar/dashboard. Från kontrollstationen ska personal kunna konfigurera rummens speglar efter gästens information.
+Som till exempel namn och pilotens nästa resmål.
 
----
+Hotellspegeln innehåller:
+- Klocka
+- Lokalväder enl. hotellets ICAO kod
+- Destination
+  - Väder på flygplatsen
+  - Gate (om finns)
+  - Avgångstid (om finns)
+- Flygplatsinformation
+  - Arrivals
+  - Departures + Boarding gates
 
-## Datakällor och resurser
+Utöver innehåll ska hotellpersonalen kunna administrera sina enheter via en konsol eller applikation där de ska kunna:
+- Anpassa gästinformationen till varje rum/enhet
+  - Namn
+  - Nästa destination eller flygning 
+- Skicka ut meddelanden och information som visas på gästernas enheter
 
-- **METAR API (CheckWX)**  
-  Skapa ett konto på https://checkwxapi.com/  
-  API-endpoint: `https://api.checkwx.com/metar/<ICAO>`  
-  Exempel med curl:
+|DashyBord features   |Personlig (B2C)                     |Hotellversion (B2B)                         |
+|----------------|-------------------------------|-----------------------------|
+| Inloggning|   ✅      |❌           |
+|Klocka|✅|✅|
+|Lokaltrafik (t.ex. SL)|✅|✅|
+|Lokalväder|✅|❌|
+|Valfri extern datakälla|✅|❌|
+|Användare kan bli vänner med varandra|✅|❌|
+|Vänner kan skicka hälsningar till varandra|✅|❌|
+|Användaren kan anpassa|✅|❌|
+|Adminverktyg för att anpassa|❌            |✅          |
+|ICAO anpassat väder|❌|✅|
+|Flygplatsens boarding gates|❌|✅|
+|Flygplatsens arrivals|❌|✅|
+|Meddelandetjänst main -> sub|❌|✅|
 
-  ```bash
-  curl 'https://api.checkwx.com/metar/essa' -H 'X-API-Key: xxxxx'
-  ```
+# Arkitektur
+Ni väljer själva teknikstack. Men vi kräver en separat front- och backend.
+Vi rekommenderar React + TypeScript samt .Net/C#
 
-  Ersätt `xxxxx` med din API-nyckel från CheckWX.
+Kommunikation mellan - REST API, inga custom oklara "specialare" endpoints
 
-- **Väderikoner (Weather Icons)**  
-  https://erikflowers.github.io/weather-icons/
-
-- **Flygplatslista (ICAO-koder)**  
-  https://davidmegginson.github.io/ourairports-data/airports.csv
-
----
-
-## Uppgift
-
-Bygg en webbaserad UI-komponent som:
-
-- tar emot METAR via ICAO eller inklistrad text
-- parsar METAR till en egen datamodell
-- visar vädret visuellt med ikoner och text
-- alltid visar rå METAR under UI:t
-
-Fokus ligger på **struktur, rimliga förenklingar och konsekvent tolkning**.
-
----
-
-## Avgränsningar
-
-- Endast **nuläge** ska tolkas
-- **REMARKS (RMK)** ska ignoreras helt
-- Prognoser (TAF), trender och historik ingår inte
-
----
-
-<details>
-<summary><strong>Hur METAR tolkas (klicka för att visa/dölja)</strong></summary>
-Länk för att läsa mer: https://metar-taf.com/explanation
-
-### Parser-checklista
-
-1. **Förbehandling**
-
-   - Trimma text
-   - Ta bort allt efter `RMK`
-   - Ta bort `METAR` / `SPECI`
-
-2. **ICAO**
-
-   - Första token med exakt 4 bokstäver (A–Z)
-
-3. **Tid (uppdaterad)**
-
-   - Token `DDHHMMZ`
-   - Visas i UI som “Uppdaterad”
-
-4. **Vind**
-
-   - `dddffKT`
-   - `VRBffKT`
-   - `dddffGggKT`
-
-5. **Sikt**
-
-   - `CAVOK`
-   - eller 4 siffror (`9999`)
-
-6. **Väderfenomen**
-
-   - Endast:
-     - `SN`, `-SN`
-     - `RA`, `-RA`
-     - `FG`, `BR`
-
-7. **Moln**
-
-   - `FEW`, `SCT`, `BKN`, `OVC` (+ bas)
-
-8. **Temperatur**
-
-   - `TT/DD`
-   - `M` = minusgrader
-
-9. **QNH**
-   - `Q` + 4 siffror
-
-Saknas data → visa `—` (appen får inte krascha).
-
-</details>
-
----
-
-## Ikonregler (exakt 1 ikon)
-
-Prioritet (uppifrån och ned):
-
-1. `FG` eller `BR` → **Fog**
-2. `SN` eller `-SN` → **Snow**
-3. `RA` eller `-RA` → **Rain**
-4. `BKN` eller `OVC` → **Cloudy**
-5. Annars → **Clear**
-
-Ikoner ska användas från Weather Icons.
-
----
-
-## UI-minimum
-
-UI:t ska visa:
-
-- vald väderikon
-- uppdaterad tid
-- vind
-- sikt
-- temperatur
-- QNH
-- moln
-- rå METAR (alltid synlig)
-
----
-
-## Stilpoäng (valfritt)
-
-Följande ger **stilpoäng**, men är inte krav för godkänt:
-
-- Hämta listan med flygplatser från:
-  https://davidmegginson.github.io/ourairports-data/airports.csv
-- Skapa ett **autocomplete-fält** för ICAO-koder
-- Visa gärna:
-  - ICAO-kod
-  - flygplatsnamn
-  - land eller stad (valfritt)
-
-Autocomplete ska:
-
-- hjälpa användaren att välja giltig ICAO
-- fortfarande tillåta manuell inmatning
-
----
-
-## Definition of Done (DoD)
-
-Lösningen anses klar när:
-
-- Användaren kan ange `ESSA` eller `ESSB` och få ett fungerande UI
-- Användaren kan klistra in en giltig METAR och få samma UI
-- Väderikonen ändras beroende på METAR
-- Uppdaterad tid visas
-- Rå METAR visas under UI:t
-- Ogiltig input ger ett tydligt felmeddelande
-- REMARKS påverkar inte resultatet
