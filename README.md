@@ -102,6 +102,3 @@ Ni väljer själva teknikstack. Men vi kräver en separat front- och backend.
 Vi rekommenderar React + TypeScript samt .Net/C#
 
 Kommunikation mellan - REST API, inga custom oklara "specialare" endpoints
-
-CI/CD
-Ni utvecklar iterativt och håller main 
