@@ -15,22 +15,22 @@ ex. `CiP-01-FizzlyBizz`
 
 ---
 
-# Projekt - DashyBord (CiP-25-DashyBoard)
+# Projekt - DashyBoard (CiP-25-DashyBoard)
 
 Ni har i uppgift att skapa en applikation som ska ta hallspegeln till framtiden. Hallspegeln visar relevant och personlig information en individ kan tänkas behöva ta in när de ska lämna hemmet.
 
 Men ni har ett val. Antingen går ni spåret att utveckla applikationen för individen, eller så bygger ni en version av applikationen mer lämpad åt hotell, specifikt flygplanshotell.
 | Spår                                   | Målgrupp                | Fokus                                       |
 | -------------------------------------- | ----------------------- | ------------------------------------------- |
-| **B2C – Personlig DashyBord**          | Privatpersoner          | Personlig, social och anpassningsbar        |
+| **B2C – Personlig DashyBoard**          | Privatpersoner          | Personlig, social och anpassningsbar        |
 | **B2B – Hotellversion (Pilot-hotell)** | Hotell för flygpersonal | Central administration och destinationsinfo |
 
-## Spår B2C - Personlig DashyBord
+## Spår B2C - Personlig DashyBoard
 "Tänk dig en smart och personlig dashboard med relevant information när du beger dig ut."
 Sa Dasha Ybor till Bor Daniel under en kafferast, och som ledde de till att starta bolag. Idag är ni anställda för att förverkliga den idén. 
 Efterfrågan har vuxit och förväntningarna på systemet är skyhöga. 
-Det sägs att alla kommer ha en DashyBord i hallen. Det ryktas redan om samarbeten med bl.a. IKEA, Balettakademien och The Mirror.
-Själva grunden till DashyBord är personligheten, anpassningen och det sociala. Användare ska kunna logga in och spara sin egna konfiguration av vad som visas.
+Det sägs att alla kommer ha en DashyBoard i hallen. Det ryktas redan om samarbeten med bl.a. IKEA, Balettakademien och The Mirror.
+Själva grunden till DashyBoard är personligheten, anpassningen och det sociala. Användare ska kunna logga in och spara sin egna konfiguration av vad som visas.
 
 En personlig dashboard som innehåller 
 - Klocka
@@ -81,7 +81,7 @@ Utöver innehåll ska hotellpersonalen kunna administrera sina enheter via en ko
   - Nästa destination eller flygning 
 - Skicka ut meddelanden och information som visas på gästernas enheter
 
-|DashyBord features   |Personlig (B2C)                     |Hotellversion (B2B)                         |
+|DashyBoard features   |Personlig (B2C)                     |Hotellversion (B2B)                         |
 |----------------|-------------------------------|-----------------------------|
 | Inloggning|   ✅      |❌           |
 |Klocka|✅|✅|
