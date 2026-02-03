@@ -48,6 +48,7 @@ En personlig dashboard som innehåller
   - Skicka puff/hälsning/meddelande till vänner 
 - Valfri interaktiv extern datakälla
   - Aktiebevakning
+  - Nyheter
   - RSS Feed
   - Guldpriser
   - Statussida
@@ -58,7 +59,7 @@ En personlig dashboard som innehåller
 
 ## Spår B2B - Hotellversion Pilow
 Hotellkedjan **Pilows** riktar sig till trötta piloter världen över och ska starta upp ett nytt koncept precis intill en flygplats. Det är helt upp till er vilken flygplats hotellet ska etablera sig på. 
-Varje rum ska bestyckas med en smart spegel. Det är er uppgift att utveckla systemet för dessa speglar.
+Varje rum ska bestyckas med en smart spegel, ni kan anta att det är färre än 100 rum. Det är er uppgift att utveckla systemet för dessa speglar.
 
 I hotellversionen krävs ingen personlig inloggning och vädret bestäms av hotellets position. Däremot kräver personalen en central kontrollstation som kan hantera gästernas speglar/dashboard. Från kontrollstationen ska personal kunna konfigurera rummens speglar efter gästens information.
 Som till exempel namn och pilotens nästa resmål.
@@ -102,3 +103,5 @@ Vi rekommenderar React + TypeScript samt .Net/C#
 
 Kommunikation mellan - REST API, inga custom oklara "specialare" endpoints
 
+CI/CD
+Ni utvecklar iterativt och håller main 
