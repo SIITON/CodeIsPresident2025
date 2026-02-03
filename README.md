@@ -15,7 +15,7 @@ ex. `CiP-01-FizzlyBizz`
 
 ---
 
-# Projekt - DashyBord (CiP-25-DashyBord)
+# Projekt - DashyBord (CiP-25-DashyBoard)
 
 Ni har i uppgift att skapa en applikation som ska ta hallspegeln till framtiden. Hallspegeln visar relevant och personlig information en individ kan tänkas behöva ta in när de ska lämna hemmet.
 
