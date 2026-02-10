@@ -85,7 +85,7 @@ Utöver innehåll ska hotellpersonalen kunna administrera sina enheter via en ko
 |----------------|-------------------------------|-----------------------------|
 | Inloggning|   ✅      |❌           |
 |Klocka|✅|✅|
-|Lokaltrafik (t.ex. SL)|✅|✅|
+|Lokaltrafik (t.ex. SL)|✅|❌|
 |Lokalväder|✅|❌|
 |Valfri extern datakälla|✅|❌|
 |Användare kan bli vänner med varandra|✅|❌|
